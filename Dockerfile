@@ -10,4 +10,5 @@ ENV         HOME=/home/container USER=container
 WORKDIR     /home/container
 
 COPY        ./startup-script.sh /startup-script.sh
+RUN 		[“chmod”, “+x”, "/startup-script.sh”]
 CMD         ["/bin/bash", "/entrypoint.sh"]
