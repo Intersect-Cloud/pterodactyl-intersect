@@ -10,4 +10,4 @@ ENV         HOME=/home/container USER=container
 WORKDIR     /home/container
 
 COPY        ./startup-script.sh /startup-script.sh
-CMD         ["/bin/ash", "/entrypoint.sh"]
+CMD         ["/bin/bash", "/entrypoint.sh"]
