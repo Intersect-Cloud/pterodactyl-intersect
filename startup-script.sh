@@ -1,8 +1,4 @@
-str="$1"
-port=${@:$#}
-second=""
-str=${str// $port/$second}
-pdb=${str//.exe/.pdb}
+pdb="Intersect Server.pdb"
 mono --version
 params=""
 shift;
@@ -15,8 +11,8 @@ if [ -f "$pdb" ]; then
    echo "Debug file exists, creating Mono variant, error logs will contain line numbers"
    pdb2mdb "$str"
    sleep 5
-   mono --debug "$str" $params
+   mono --debug "$Intersect Server.exe" $params
 else
    echo "Debug file (.pdb) not provided, error logs will not contain line numbers."
-   mono "$str" $params
+   mono "Intersect Server.exe" $params
 fi
