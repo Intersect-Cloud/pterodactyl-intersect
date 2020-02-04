@@ -1,5 +1,5 @@
 pdb="Intersect Server.pdb"
-mono --version
+mono --version | head -1
 params=""
 shift;
 for item in "$@" ; do
@@ -9,7 +9,7 @@ done
 rm -rf *.mdb
 if [ -f "$pdb" ]; then
    echo "Debug file exists, creating Mono variant, error logs will contain line numbers"
-   pdb2mdb "$str"
+   pdb2mdb "Intersect Server.exe"
    sleep 5
    mono --debug "Intersect Server.exe" $params
 else

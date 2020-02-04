@@ -1,10 +1,10 @@
-FROM 		quay.io/pterodactyl/core:mono
-
+FROM 		mono:latest
 MAINTAINER 	JC Snider, <jcsnider3@gmail.com>
 
 USER        root
-RUN 		apk update &&  apk upgrade &&  apk add --no-cache --update sqlite-libs curl ca-certificates openssl git tar bash
+RUN 		apt-get update &&  apt-get upgrade &&  apt-get install -y sqlite3 libsqlite3-dev curl ca-certificates openssl git tar bash wget unzip && adduser -D -h /home/container container
 
+COPY        ./entrypoint.sh /entrypoint.sh
 COPY        ./startup-script.sh /startup-script.sh
 RUN 		["chmod", "+x", "/startup-script.sh"]
 
