@@ -1,5 +1,4 @@
 FROM 		mono:latest
-
 MAINTAINER 	JC Snider, <jcsnider3@gmail.com>
 
 USER        root
