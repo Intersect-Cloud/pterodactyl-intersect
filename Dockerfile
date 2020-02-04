@@ -3,7 +3,7 @@ FROM 		mono:latest
 MAINTAINER 	JC Snider, <jcsnider3@gmail.com>
 
 USER        root
-RUN 		apt-get update &&  apt-get upgrade &&  apt-get install --no-cache --update sqlite-libs curl ca-certificates openssl git tar bash && adduser -D -h /home/container container
+RUN 		apt-get update &&  apt-get upgrade &&  apt-get install -y sqlite3 curl ca-certificates openssl git tar bash && adduser -D -h /home/container container
 
 COPY        ./entrypoint.sh /entrypoint.sh
 COPY        ./startup-script.sh /startup-script.sh
