@@ -1,5 +1,5 @@
 pdb="Intersect Server.pdb"
-mono --version
+mono --version | head -1
 params=""
 shift;
 for item in "$@" ; do
