@@ -1,9 +1,9 @@
 pdb="Intersect Server.pdb"
 mono --version | head -1
 params=""
-shift;
+
 for item in "$@" ; do
-  params=" $params $item "
+  params="$params$item "
 done
 
 rm -rf *.mdb
