@@ -1,4 +1,4 @@
-FROM 		mono:latest
+FROM 		mono:6.10.0.104
 MAINTAINER 	JC Snider, <jcsnider3@gmail.com>
 
 USER        root
